@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
@@ -48,9 +49,9 @@ export default function Team() {
               <p className="mx-auto mt-3 max-w-xl text-slate-400">
                 We're always looking for students who want to teach, mentor, and help lead. No experience required — just enthusiasm.
               </p>
-              <a href="/get-involved" className="btn-primary mt-6">
+              <Link to="/get-involved" className="btn-primary mt-6">
                 Become a volunteer <Icon name="arrow" className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>

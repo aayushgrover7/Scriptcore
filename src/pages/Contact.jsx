@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Icon from '../components/Icon.jsx'
@@ -55,7 +56,7 @@ export default function Contact() {
               <div className="rounded-2xl border border-brand-cyan/20 bg-brand-cyan/[0.06] p-6">
                 <p className="font-display font-semibold text-white">Want to learn or volunteer?</p>
                 <p className="mt-1 text-sm text-slate-400">
-                  Head to <a href="/get-involved" className="text-brand-cyan underline-offset-2 hover:underline">Get Involved</a> to sign up directly.
+                  Head to <Link to="/get-involved" className="text-brand-cyan underline-offset-2 hover:underline">Get Involved</Link> to sign up directly.
                 </p>
               </div>
             </div>
