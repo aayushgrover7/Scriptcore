@@ -39,6 +39,9 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Let the workflow enable Pages itself (uses the job's GITHUB_TOKEN).
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
