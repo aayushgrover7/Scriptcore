@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-slate-400 antialiased;
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(60rem 60rem at 80% -10%, rgba(234, 179, 8, 0.12), transparent 60%),
+      radial-gradient(50rem 50rem at -10% 20%, rgba(245, 158, 11, 0.1), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(250, 204, 21, 0.45);
+    color: #1c1917;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-white;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-yellow-500 via-amber-500 to-amber-600 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/[0.03] backdrop-blur-md;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/70;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-yellow-300 to-amber-400 text-stone-900 shadow-glow hover:-translate-y-0.5 hover:shadow-glow-blue;
+  }
+
+  .btn-ghost {
+    @apply btn border border-stone-300 bg-stone-100 text-stone-900 hover:border-yellow-500/70 hover:bg-yellow-100;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-yellow-400/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-stone-200 p-7 shadow-card transition-all duration-300;
+    background-color: #ffffff;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-amber-600;
+  }
+}
+
+/* Grid texture used on section backgrounds */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Animated hero gradient */
+.hero-gradient {
+  background: linear-gradient(120deg, #fffdf5 0%, #fef9c3 35%, #fef3c7 65%, #fffdf5 100%);
+  background-size: 300% 300%;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
