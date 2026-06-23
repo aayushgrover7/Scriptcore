@@ -22,7 +22,7 @@ export default function About() {
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-brand-blue/20 to-brand-cyan/20 blur-2xl" />
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
                 <img
-                  src="/workshop-session-1.png"
+                  src={`${import.meta.env.BASE_URL}workshop-session-1.png`}
                   alt="ScriptCore student writing on a whiteboard during a session"
                   className="h-full w-full object-cover"
                 />
@@ -80,7 +80,7 @@ export default function About() {
             <Reveal>
               <div className="overflow-hidden rounded-2xl border border-white/10">
                 <img
-                  src="/workshop-session-2.png"
+                  src={`${import.meta.env.BASE_URL}workshop-session-2.png`}
                   alt="ScriptCore student presenting at a projector during a workshop"
                   className="h-full w-full object-cover"
                 />
@@ -89,7 +89,7 @@ export default function About() {
             <Reveal delay={0.1}>
               <div className="overflow-hidden rounded-2xl border border-white/10">
                 <img
-                  src="/workshop-session-1.png"
+                  src={`${import.meta.env.BASE_URL}workshop-session-1.png`}
                   alt="ScriptCore student writing on a whiteboard during a session"
                   className="h-full w-full object-cover"
                 />
