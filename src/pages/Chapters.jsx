@@ -7,7 +7,7 @@ import { CHAPTERS } from '../data/site.js'
 import ChapterMap from '../components/ChapterMap.jsx'
 
 const STEPS = [
-  { title: 'Apply', text: 'Tell us about your school and why you want to bring ScriptCore there.' },
+  { title: 'Apply', text: 'Tell us about your town and why you want to bring ScriptCore there.' },
   { title: 'Onboard', text: 'We set you up with curriculum, slides, and mentor support to get going.' },
   { title: 'Launch', text: 'Host your first workshop and start building your local community.' },
 ]
@@ -17,7 +17,7 @@ export default function Chapters() {
     <>
       <PageHero
         eyebrow="Chapters"
-        title="Bring ScriptCore to your school"
+        title="Bring ScriptCore to your town"
         subtitle="Our chapters are student-run hubs of learning. Join an existing one — or start your own and lead the way."
       >
         <Link to="/get-involved" className="btn-primary">

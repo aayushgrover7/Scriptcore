@@ -22,7 +22,7 @@ const PATHS = [
   {
     key: 'schools',
     icon: 'school',
-    title: 'Schools',
+    title: 'Towns',
     text: 'Partner with ScriptCore to bring accessible CS education to your students.',
     cta: 'Partner with us',
   },
@@ -123,10 +123,10 @@ export default function GetInvolved() {
                     >
                       <option value="students">Student</option>
                       <option value="volunteers">Volunteer / Mentor</option>
-                      <option value="schools">School / Partner</option>
+                      <option value="schools">Town / Partner</option>
                     </select>
                   </div>
-                  <Field label="School (optional)" name="school" placeholder="Your school" />
+                  <Field label="Town (optional)" name="school" placeholder="Your town" />
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-slate-300">Anything you'd like us to know?</label>
                     <textarea
@@ -168,5 +168,5 @@ function Field({ label, name, type = 'text', placeholder, required }) {
 }
 
 function labelFor(role) {
-  return role === 'students' ? 'students' : role === 'volunteers' ? 'volunteers' : 'school partners'
+  return role === 'students' ? 'students' : role === 'volunteers' ? 'volunteers' : 'town partners'
 }

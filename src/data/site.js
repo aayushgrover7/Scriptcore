@@ -14,7 +14,7 @@ export const NAV_LINKS = [
 export const IMPACT_STATS = [
   { value: 70, suffix: '+', label: 'Students Taught' },
   { value: 20, suffix: '+', label: 'Workshops Hosted' },
-  { value: 3, suffix: '+', label: 'Schools Reached' },
+  { value: 3, suffix: '+', label: 'Towns Reached' },
   { value: 20, suffix: '+', label: 'Volunteers' },
 ]
 
@@ -133,7 +133,7 @@ export const WHY_PROGRAMS = [
 export const TIMELINE = [
   { year: '2023', title: 'ScriptCore Founded', text: 'A small group of students set out to make CS education accessible to everyone.' },
   { year: '2024', title: 'First Community Workshops', text: 'Launched our first workshop series and welcomed our earliest cohort of learners.' },
-  { year: '2026', title: 'Expansion Into Multiple Schools', text: 'Grew into a multi-chapter network reaching students across several schools.' },
+  { year: '2026', title: 'Expansion Into Multiple Towns', text: 'Grew into a multi-chapter network reaching students across several towns.' },
   { year: 'Future', title: 'National Network of Student-Led STEM Education', text: 'Building toward a nationwide community of student innovators and mentors.' },
 ]
 
@@ -174,7 +174,7 @@ export const TEAM = [
   { name: 'Jordan Patel', role: 'Vice President', focus: 'Web Development', initials: 'JP' },
   { name: 'Sam Rivera', role: 'Head of Robotics', focus: 'LEGO Robotics', initials: 'SR' },
   { name: 'Taylor Kim', role: 'Events Lead', focus: 'Hackathons & Workshops', initials: 'TK' },
-  { name: 'Morgan Lee', role: 'Outreach Coordinator', focus: 'Schools & Partnerships', initials: 'ML' },
+  { name: 'Morgan Lee', role: 'Outreach Coordinator', focus: 'Towns & Partnerships', initials: 'ML' },
   { name: 'Casey Nguyen', role: 'Mentorship Lead', focus: 'Leadership Program', initials: 'CN' },
 ]
 
