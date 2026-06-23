@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Icon from '../components/Icon.jsx'
 import { CHAPTERS } from '../data/site.js'
+import ChapterMap from '../components/ChapterMap.jsx'
 
 const STEPS = [
   { title: 'Apply', text: 'Tell us about your school and why you want to bring ScriptCore there.' },
@@ -57,6 +58,9 @@ export default function Chapters() {
                 </Reveal>
               )
             })}
+          </div>
+          <div className="mt-12">
+            <ChapterMap chapters={CHAPTERS} />
           </div>
         </div>
       </section>
