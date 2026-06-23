@@ -202,10 +202,10 @@ export const TEAM = [
 ]
 
 export const CHAPTERS = [
-  { name: 'Northgate High', city: 'Founding Chapter', members: 24, status: 'Active' },
-  { name: 'Riverside Academy', city: 'Established 2025', members: 18, status: 'Active' },
-  { name: 'Lincoln STEM School', city: 'Established 2026', members: 15, status: 'Active' },
-  { name: 'Your School', city: 'Start a chapter', members: 0, status: 'Open' },
+  { name: 'South Windsor, CT', city: 'Home Base', status: 'Active', home: true },
+  { name: 'Glastonbury, CT', city: '', status: 'Active' },
+  { name: 'Shrewsbury, MA', city: '', status: 'Active' },
+  { name: 'Rockville, MD', city: '', status: 'Active' },
 ]
 
 export const SOCIALS = [

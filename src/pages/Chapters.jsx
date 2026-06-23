@@ -45,15 +45,13 @@ export default function Chapters() {
                       </span>
                     </div>
                     <h3 className="mt-4 text-lg font-bold">{c.name}</h3>
-                    <p className="text-sm text-slate-400">{c.city}</p>
-                    {open ? (
+                    {c.city && (
+                      <p className={`text-sm font-semibold ${c.home ? 'text-brand-cyan' : 'text-slate-400'}`}>{c.city}</p>
+                    )}
+                    {open && (
                       <Link to="/get-involved" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan">
                         Could be you <Icon name="arrow" className="h-4 w-4" />
                       </Link>
-                    ) : (
-                      <p className="mt-4 flex items-center gap-2 text-sm text-slate-400">
-                        <Icon name="users" className="h-4 w-4 text-brand-cyan" /> {c.members} members
-                      </p>
                     )}
                   </div>
                 </Reveal>
