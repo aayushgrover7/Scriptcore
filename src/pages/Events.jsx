@@ -1,6 +1,7 @@
 import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
+import Icon from '../components/Icon.jsx'
 import { CTASection } from './Home.jsx'
 import { EVENTS_PAST } from '../data/site.js'
 
