@@ -20,12 +20,12 @@ export default function About() {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-brand-blue/20 to-brand-cyan/20 blur-2xl" />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-navy-800 to-navy-950">
-                <div className="absolute inset-0 bg-grid opacity-30" />
-                <div className="flex h-full flex-col items-center justify-center gap-3 text-center">
-                  <Icon name="users" className="h-12 w-12 text-brand-cyan/60" />
-                  <p className="font-mono text-sm text-slate-500">workshop in session</p>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="/workshop-session-1.png"
+                  alt="ScriptCore student writing on a whiteboard during a session"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </Reveal>
@@ -69,6 +69,33 @@ export default function About() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* SESSIONS IN ACTION */}
+      <section className="py-24">
+        <div className="container-px">
+          <SectionHeading eyebrow="Sessions in Action" title="See what our workshops look like" />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <Reveal>
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="/workshop-session-2.png"
+                  alt="ScriptCore student presenting at a projector during a workshop"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src="/workshop-session-1.png"
+                  alt="ScriptCore student writing on a whiteboard during a session"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
