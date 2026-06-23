@@ -132,7 +132,7 @@ export const WHY_PROGRAMS = [
 
 export const TIMELINE = [
   { year: '2023', title: 'ScriptCore Founded', text: 'A small group of students set out to make CS education accessible to everyone.' },
-  { year: '2024', title: 'First Community Workshops', text: 'Launched our first workshop series and welcomed our earliest cohort of learners.' },
+  { year: '2024–2025', title: 'First Community Workshops', text: 'Launched our first workshop series and welcomed our earliest cohort of learners.' },
   { year: '2026', title: 'Expansion Into Multiple Towns', text: 'Grew into a multi-chapter network reaching students across several towns.' },
   { year: 'Future', title: 'National Network of Student-Led STEM Education', text: 'Building toward a nationwide community of student innovators and mentors.' },
 ]
