@@ -137,29 +137,6 @@ export const TIMELINE = [
   { year: 'Future', title: 'National Network of Student-Led STEM Education', text: 'Building toward a nationwide community of student innovators and mentors.' },
 ]
 
-export const EVENTS_UPCOMING = [
-  {
-    type: 'Workshop',
-    title: 'Intro to Python: Build Your First App',
-    date: 'July 12, 2026',
-    location: 'Community Library · Room B',
-    text: 'A hands-on beginner workshop covering variables, loops, and your first mini-project.',
-  },
-  {
-    type: 'Hackathon',
-    title: 'ScriptCore Summer Hack',
-    date: 'August 9–10, 2026',
-    location: 'Innovation Hub',
-    text: '24 hours of building, mentorship, and prizes for student teams of all skill levels.',
-  },
-  {
-    type: 'Competition',
-    title: 'Regional Coding Challenge',
-    date: 'September 21, 2026',
-    location: 'Online',
-    text: 'Test your algorithms and data-structures skills against students across the region.',
-  },
-]
 
 export const EVENTS_PAST = [
   { title: 'Web Dev Bootcamp', date: 'March 2026', recap: 'Three sessions, 28 students shipped their first live websites.' },

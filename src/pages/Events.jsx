@@ -1,15 +1,8 @@
 import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
-import Icon from '../components/Icon.jsx'
 import { CTASection } from './Home.jsx'
-import { EVENTS_UPCOMING, EVENTS_PAST } from '../data/site.js'
-
-const TYPE_STYLES = {
-  Workshop: 'text-brand-cyan border-brand-cyan/30 bg-brand-cyan/10',
-  Hackathon: 'text-brand-blue border-brand-blue/30 bg-brand-blue/10',
-  Competition: 'text-amber-300 border-amber-400/30 bg-amber-400/10',
-}
+import { EVENTS_PAST } from '../data/site.js'
 
 export default function Events() {
   return (
@@ -17,37 +10,8 @@ export default function Events() {
       <PageHero
         eyebrow="Events"
         title="Workshops, hackathons & competitions"
-        subtitle="There's always something happening at ScriptCore. Join an upcoming event or relive the highlights from past ones."
+        subtitle="A look back at what our community has built and celebrated together."
       />
-
-      {/* UPCOMING */}
-      <section className="py-24">
-        <div className="container-px">
-          <SectionHeading eyebrow="Upcoming" title="Mark your calendar" align="start" />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {EVENTS_UPCOMING.map((e, i) => (
-              <Reveal key={e.title} delay={i * 0.08}>
-                <article className="card group flex h-full flex-col hover:-translate-y-1.5 hover:border-brand-cyan/40 hover:shadow-glow">
-                  <span className={`inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${TYPE_STYLES[e.type]}`}>
-                    {e.type}
-                  </span>
-                  <h3 className="mt-4 text-xl font-bold">{e.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{e.text}</p>
-                  <div className="mt-5 space-y-2 border-t border-white/10 pt-4 text-sm text-slate-300">
-                    <p className="flex items-center gap-2">
-                      <Icon name="spark" className="h-4 w-4 text-brand-cyan" /> {e.date}
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <Icon name="compass" className="h-4 w-4 text-brand-cyan" /> {e.location}
-                    </p>
-                  </div>
-                  <button className="btn-ghost mt-5 w-full">Register interest</button>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* PAST / RECAPS */}
       <section className="border-t border-white/10 bg-navy-950/40 py-24">
