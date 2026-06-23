@@ -174,15 +174,6 @@ export const RESOURCES = [
   { title: 'Recorded Workshops', icon: 'video', text: 'Catch up on past sessions with full workshop recordings.' },
 ]
 
-export const PROJECTS = [
-  { title: 'Weather Dashboard', author: 'Web Development', text: 'A responsive app pulling live weather data with a clean UI.', tags: ['JavaScript', 'API'] },
-  { title: 'Maze-Solving Robot', author: 'LEGO Robotics', text: 'An autonomous robot using sensors to navigate a course.', tags: ['Robotics', 'Logic'] },
-  { title: 'Quiz Game', author: 'Python', text: 'A terminal quiz game with scoring and a question bank.', tags: ['Python', 'Beginner'] },
-  { title: 'Portfolio Website', author: 'Web Development', text: 'A personal site showcasing student work and skills.', tags: ['HTML', 'CSS'] },
-  { title: 'Number Guessing AI', author: 'Competitive Programming', text: 'A binary-search powered guessing engine.', tags: ['Algorithms'] },
-  { title: 'Library Manager', author: 'Java', text: 'An OOP project modeling books, members, and checkouts.', tags: ['Java', 'OOP'] },
-]
-
 export const SUCCESS_STORIES = [
   {
     name: 'Maya R.',

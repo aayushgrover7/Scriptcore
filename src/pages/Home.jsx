@@ -11,7 +11,6 @@ import {
   IMPACT_STATS,
   WHAT_WE_DO,
   FEATURED_PROGRAMS,
-  PROJECTS,
   SUCCESS_STORIES,
 } from '../data/site.js'
 
@@ -177,38 +176,6 @@ export default function Home() {
           <Reveal delay={0.1}>
             <CodingChallenge />
           </Reveal>
-        </div>
-      </section>
-
-      {/* ============ STUDENT PROJECTS GALLERY ============ */}
-      <section className="border-y border-white/10 bg-navy-950/40 py-24">
-        <div className="container-px">
-          <SectionHeading
-            eyebrow="Student Projects Gallery"
-            title="Built by students like you"
-            subtitle="A glimpse of the real projects our members design and ship in our programs."
-          />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJECTS.map((proj, i) => (
-              <Reveal key={proj.title} delay={(i % 3) * 0.08}>
-                <div className="card group h-full hover:-translate-y-1 hover:border-brand-cyan/40">
-                  <div className="mb-4 flex aspect-video items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-navy-800 to-navy-950">
-                    <span className="font-mono text-3xl text-brand-cyan/40 transition-colors group-hover:text-brand-cyan/70">{'</>'}</span>
-                  </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-cyan">{proj.author}</p>
-                  <h3 className="mt-1 text-lg font-bold">{proj.title}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{proj.text}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {proj.tags.map((tag) => (
-                      <span key={tag} className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-400">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
