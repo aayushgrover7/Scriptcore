@@ -135,6 +135,7 @@ export const TEAM = [
   { name: 'Smirrithi Manikandan', role: 'Operations Lead', initials: 'SM' },
   { name: 'Aashrith Gummadi', role: 'Curriculum Specialist', initials: 'AG' },
   { name: 'Aayush Grover', role: 'Curriculum Specialist', initials: 'AG' },
+  { name: 'Vikruthya Hariharan', role: 'Outreach and Growth Lead', initials: 'VH' },
   { name: 'Taylor Kim', role: 'Events Lead', initials: 'TK' },
   { name: 'Morgan Lee', role: 'Outreach Coordinator', initials: 'ML' },
   { name: 'Casey Nguyen', role: 'Mentorship Lead', initials: 'CN' },
