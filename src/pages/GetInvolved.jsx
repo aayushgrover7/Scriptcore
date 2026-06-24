@@ -3,6 +3,40 @@ import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Icon from '../components/Icon.jsx'
+import { CHAPTERS } from '../data/site.js'
+
+const CHAPTER_COORDS = {
+  'South Windsor, CT': [41.839, -72.589],
+  'Glastonbury, CT':   [41.703, -72.608],
+  'Shrewsbury, MA':    [42.295, -71.719],
+  'Rockville, MD':     [39.084, -77.153],
+}
+
+function haversine([lat1, lon1], [lat2, lon2]) {
+  const R = 3958.8
+  const dLat = (lat2 - lat1) * Math.PI / 180
+  const dLon = (lon2 - lon1) * Math.PI / 180
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) ** 2
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
+
+function findNearest(lat, lon) {
+  let best = null
+  let bestDist = Infinity
+  for (const c of CHAPTERS) {
+    const coords = CHAPTER_COORDS[c.name]
+    if (!coords) continue
+    const dist = haversine([lat, lon], coords)
+    if (dist < bestDist) {
+      bestDist = dist
+      best = { ...c, miles: Math.round(dist) }
+    }
+  }
+  return best
+}
 
 const PATHS = [
   {
@@ -31,6 +65,33 @@ const PATHS = [
 export default function GetInvolved() {
   const [role, setRole] = useState('students')
   const [submitted, setSubmitted] = useState(false)
+  const [finderStatus, setFinderStatus] = useState('idle')
+  const [nearestChapter, setNearestChapter] = useState(null)
+
+  function handlePathClick(key) {
+    setRole(key)
+    if (key !== 'students') {
+      setFinderStatus('idle')
+      setNearestChapter(null)
+    }
+  }
+
+  function handleUseLocation() {
+    if (!navigator.geolocation) {
+      setFinderStatus('error')
+      return
+    }
+    setFinderStatus('loading')
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const chapter = findNearest(pos.coords.latitude, pos.coords.longitude)
+        setNearestChapter(chapter)
+        setFinderStatus('found')
+      },
+      () => setFinderStatus('error'),
+      { timeout: 10000 },
+    )
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -52,7 +113,7 @@ export default function GetInvolved() {
             {PATHS.map((p, i) => (
               <Reveal key={p.key} delay={i * 0.1}>
                 <button
-                  onClick={() => setRole(p.key)}
+                  onClick={() => handlePathClick(p.key)}
                   className={`card h-full w-full text-left transition-all hover:-translate-y-1.5 hover:border-brand-cyan/40 ${
                     role === p.key ? 'border-brand-cyan/60 shadow-glow' : ''
                   }`}
@@ -69,10 +130,71 @@ export default function GetInvolved() {
               </Reveal>
             ))}
           </div>
+
+          {/* CHAPTER FINDER — shown when Students is selected */}
+          {role === 'students' && (
+            <Reveal delay={0.05}>
+              <div className="mt-10 rounded-2xl border border-brand-cyan/20 bg-brand-cyan/[0.04] p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-cyan/15 text-brand-cyan">
+                    <Icon name="compass" className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold">Find your nearest chapter</h3>
+                    <p className="mt-1 text-sm text-slate-400">
+                      Share your location and we'll match you to the closest ScriptCore chapter.
+                    </p>
+
+                    {finderStatus === 'idle' && (
+                      <button onClick={handleUseLocation} className="btn-primary mt-5">
+                        <Icon name="compass" className="h-4 w-4" /> Use my location
+                      </button>
+                    )}
+
+                    {finderStatus === 'loading' && (
+                      <p className="mt-5 text-sm text-slate-400">Locating you…</p>
+                    )}
+
+                    {finderStatus === 'found' && nearestChapter && (
+                      <div className="mt-5 flex items-center gap-5">
+                        <div className="rounded-xl border border-brand-cyan/30 bg-navy-900/60 px-6 py-4">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-brand-cyan">
+                            Nearest chapter
+                          </p>
+                          <p className="mt-1 text-xl font-bold">{nearestChapter.name}</p>
+                          {nearestChapter.home && (
+                            <p className="mt-0.5 text-xs font-semibold text-brand-cyan">Home Base</p>
+                          )}
+                          <p className="mt-1 text-sm text-slate-400">{nearestChapter.miles} miles away</p>
+                        </div>
+                        <button
+                          onClick={() => { setFinderStatus('idle'); setNearestChapter(null) }}
+                          className="text-xs text-slate-500 underline underline-offset-2 hover:text-slate-300"
+                        >
+                          Search again
+                        </button>
+                      </div>
+                    )}
+
+                    {finderStatus === 'error' && (
+                      <div className="mt-5">
+                        <p className="text-sm text-red-400">
+                          Couldn't access your location — please check your browser permissions and try again.
+                        </p>
+                        <button onClick={handleUseLocation} className="btn-ghost mt-3">
+                          Try again
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          )}
         </div>
       </section>
 
-      {/* SIGN-UP FORM (Google Form stand-in) */}
+      {/* SIGN-UP FORM */}
       <section className="border-t border-white/10 bg-navy-950/40 py-24">
         <div className="container-px grid items-start gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
