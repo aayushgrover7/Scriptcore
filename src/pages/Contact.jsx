@@ -24,7 +24,9 @@ export default function Contact() {
               <div>
                 <h2 className="text-2xl font-bold">Reach out directly</h2>
                 <a
-                  href={`mailto:${CONTACT_EMAIL}`}
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 transition-colors hover:border-brand-cyan/50"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-cyan/15 text-brand-cyan">

@@ -47,7 +47,9 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Get in touch</h4>
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-brand-cyan"
           >
             <Icon name="mail" className="h-5 w-5" />
