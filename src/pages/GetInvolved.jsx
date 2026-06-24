@@ -227,6 +227,31 @@ export default function GetInvolved() {
               </div>
             </Reveal>
           )}
+
+          {/* VOLUNTEER CONTACT — shown when Volunteers is selected */}
+          {role === 'volunteers' && (
+            <Reveal delay={0.05}>
+              <div className="mt-10 rounded-2xl border border-brand-cyan/20 bg-brand-cyan/[0.04] p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-cyan/15 text-brand-cyan">
+                    <Icon name="star" className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold">Interested in volunteering?</h3>
+                    <p className="mt-1 text-sm text-slate-400">
+                      Email us and we'll get back to you with available opportunities.
+                    </p>
+                    <a
+                      href="mailto:scriptcore1@gmail.com"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:underline"
+                    >
+                      scriptcore1@gmail.com <Icon name="arrow" className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          )}
         </div>
       </section>
 
