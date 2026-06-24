@@ -126,8 +126,6 @@ export const EVENTS_PAST = [
 export const RESOURCES = [
   { title: 'Slides', icon: 'slides', text: 'Presentation decks from every workshop, ready to review or reuse.' },
   { title: 'Lesson Plans', icon: 'plan', text: 'Structured, beginner-friendly curriculum guides for each program.' },
-  { title: 'Coding Challenges', icon: 'puzzle', text: 'Practice problems and challenges to sharpen your skills at home.' },
-  { title: 'Recorded Workshops', icon: 'video', text: 'Catch up on past sessions with full workshop recordings.' },
 ]
 
 
