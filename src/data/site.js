@@ -129,7 +129,7 @@ export const RESOURCES = [
 
 
 export const TEAM = [
-  { name: 'Rishii Murali', role: 'President', focus: 'Python · Curriculum', initials: 'AC' },
+  { name: 'Rishi Murali', role: 'President', focus: 'Python · Curriculum', initials: 'AC' },
   { name: 'Jordan Patel', role: 'Vice President', focus: 'Web Development', initials: 'JP' },
   { name: 'Sam Rivera', role: 'Head of Robotics', focus: 'LEGO Robotics', initials: 'SR' },
   { name: 'Taylor Kim', role: 'Events Lead', focus: 'Hackathons & Workshops', initials: 'TK' },
