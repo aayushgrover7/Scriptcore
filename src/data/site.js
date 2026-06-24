@@ -130,23 +130,6 @@ export const RESOURCES = [
   { title: 'Recorded Workshops', icon: 'video', text: 'Catch up on past sessions with full workshop recordings.' },
 ]
 
-export const SUCCESS_STORIES = [
-  {
-    name: 'Maya R.',
-    role: 'Now a peer instructor',
-    quote: 'I joined ScriptCore knowing nothing about code. A year later I am teaching the Python workshop I once took.',
-  },
-  {
-    name: 'Devon L.',
-    role: 'Robotics → Competitive Programming',
-    quote: 'The robotics program got me hooked, and the competition team taught me how to really think through problems.',
-  },
-  {
-    name: 'Priya S.',
-    role: 'Built her first website',
-    quote: 'The web development track helped me publish my first real site. Now I build pages for local clubs.',
-  },
-]
 
 export const TEAM = [
   { name: 'Alex Chen', role: 'Founder & President', focus: 'Python · Curriculum', initials: 'AC' },

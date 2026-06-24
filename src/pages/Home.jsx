@@ -11,7 +11,6 @@ import {
   IMPACT_STATS,
   WHAT_WE_DO,
   FEATURED_PROGRAMS,
-  SUCCESS_STORIES,
 } from '../data/site.js'
 
 export default function Home() {
@@ -179,31 +178,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ SUCCESS STORIES ============ */}
-      <section className="py-24">
-        <div className="container-px">
-          <SectionHeading eyebrow="Success Stories" title="Students who grew with ScriptCore" />
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {SUCCESS_STORIES.map((s, i) => (
-              <Reveal key={s.name} delay={i * 0.1}>
-                <figure className="card flex h-full flex-col">
-                  <div className="text-5xl leading-none text-brand-cyan/30 font-display">“</div>
-                  <blockquote className="-mt-3 flex-1 leading-relaxed text-slate-300">{s.quote}</blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-cyan to-brand-blue text-sm font-bold text-stone-900">
-                      {s.name.split(' ').map((w) => w[0]).join('')}
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-white">{s.name}</p>
-                      <p className="text-xs text-slate-400">{s.role}</p>
-                    </div>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ============ CTA ============ */}
       <CTASection />
