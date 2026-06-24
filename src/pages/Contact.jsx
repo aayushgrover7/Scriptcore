@@ -47,6 +47,8 @@ export default function Contact() {
                       key={s.label}
                       href={s.href}
                       aria-label={s.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-colors hover:border-brand-cyan/50 hover:text-brand-cyan"
                     >
                       <Icon name={s.icon} className="h-6 w-6" />

@@ -146,7 +146,7 @@ export const CHAPTERS = [
 ]
 
 export const SOCIALS = [
-  { label: 'Instagram', href: '#', icon: 'instagram' },
+  { label: 'Instagram', href: 'https://www.instagram.com/scriptcore_southwindsor', icon: 'instagram' },
 ]
 
 export const CONTACT_EMAIL = 'scriptcore1@gmail.com'
