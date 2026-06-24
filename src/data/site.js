@@ -149,9 +149,6 @@ export const CHAPTERS = [
 
 export const SOCIALS = [
   { label: 'Instagram', href: '#', icon: 'instagram' },
-  { label: 'LinkedIn', href: '#', icon: 'linkedin' },
-  { label: 'GitHub', href: '#', icon: 'github' },
-  { label: 'YouTube', href: '#', icon: 'youtube' },
 ]
 
 export const CONTACT_EMAIL = 'scriptcore1@gmail.com'
