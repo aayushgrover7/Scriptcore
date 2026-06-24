@@ -5,7 +5,6 @@ export const NAV_LINKS = [
   { label: 'About', to: '/about' },
   { label: 'Programs', to: '/programs' },
   { label: 'Chapters', to: '/chapters' },
-  { label: 'Events', to: '/events' },
   { label: 'Resources', to: '/resources' },
   { label: 'Team', to: '/team' },
   { label: 'Contact', to: '/contact' },
