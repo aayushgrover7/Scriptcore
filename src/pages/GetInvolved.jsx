@@ -6,7 +6,7 @@ import Icon from '../components/Icon.jsx'
 import { CHAPTERS } from '../data/site.js'
 
 const CHAPTER_COORDS = {
-  'South Windsor, CT': [41.839, -72.589],
+  'South Windsor, CT': [41.861, -72.582],
   'Glastonbury, CT':   [41.703, -72.608],
   'Shrewsbury, MA':    [42.295, -71.719],
   'Rockville, MD':     [39.084, -77.153],
@@ -89,7 +89,7 @@ export default function GetInvolved() {
         setFinderStatus('found')
       },
       () => setFinderStatus('error'),
-      { timeout: 10000 },
+      { timeout: 10000, enableHighAccuracy: true },
     )
   }
 

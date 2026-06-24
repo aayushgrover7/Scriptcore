@@ -3,7 +3,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 const COORDS = {
-  'South Windsor, CT': [41.839, -72.589],
+  'South Windsor, CT': [41.861, -72.582],
   'Glastonbury, CT':   [41.703, -72.608],
   'Shrewsbury, MA':    [42.295, -71.719],
   'Rockville, MD':     [39.084, -77.153],
