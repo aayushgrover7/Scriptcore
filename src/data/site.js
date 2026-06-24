@@ -99,20 +99,6 @@ export const PROGRAMS = [
   },
 ]
 
-export const LEARNING_PATH = [
-  {
-    tier: 'Beginner',
-    items: ['LEGO Robotics', 'Python Programming', 'Java Programming', 'Public Speaking'],
-  },
-  {
-    tier: 'Intermediate',
-    items: ['Web Development', 'Artificial Intelligence'],
-  },
-  {
-    tier: 'Advanced',
-    items: ['Leadership & Mentorship'],
-  },
-]
 
 export const WHY_PROGRAMS = [
   'Hands-on learning',

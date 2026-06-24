@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Icon from '../components/Icon.jsx'
-import { PROGRAMS, LEARNING_PATH, WHY_PROGRAMS } from '../data/site.js'
+import { PROGRAMS, WHY_PROGRAMS } from '../data/site.js'
 
 export default function Programs() {
   return (
@@ -53,45 +53,6 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* LEARNING PATH */}
-      <section className="border-y border-white/10 bg-navy-950/40 py-24">
-        <div className="container-px">
-          <SectionHeading
-            eyebrow="Learning Path"
-            title="A clear route from beginner to leader"
-            subtitle="Start anywhere. Progress at your own pace through three tiers of growth."
-          />
-          <div className="mt-16 grid gap-6 lg:grid-cols-3">
-            {LEARNING_PATH.map((stage, i) => (
-              <Reveal key={stage.tier} delay={i * 0.1}>
-                <div className="relative h-full">
-                  <div className="card h-full">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-cyan to-brand-blue font-display text-sm font-bold text-stone-900">
-                        {i + 1}
-                      </span>
-                      <h3 className="text-xl font-bold">{stage.tier}</h3>
-                    </div>
-                    <ul className="mt-5 space-y-2.5">
-                      {stage.items.map((item) => (
-                        <li key={item} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-sm text-slate-300">
-                          <Icon name="arrow" className="h-4 w-4 text-brand-cyan" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {i < LEARNING_PATH.length - 1 && (
-                    <div className="absolute -bottom-5 left-1/2 hidden -translate-x-1/2 text-brand-cyan/60 lg:block lg:-right-5 lg:bottom-1/2 lg:left-auto lg:translate-x-0 lg:translate-y-1/2">
-                      <Icon name="arrow" className="h-6 w-6" />
-                    </div>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* WHY OUR PROGRAMS */}
       <section className="py-24">
