@@ -67,30 +67,54 @@ export default function GetInvolved() {
   const [submitted, setSubmitted] = useState(false)
   const [finderStatus, setFinderStatus] = useState('idle')
   const [nearestChapter, setNearestChapter] = useState(null)
+  const [zip, setZip] = useState('')
 
   function handlePathClick(key) {
     setRole(key)
     if (key !== 'students') {
       setFinderStatus('idle')
       setNearestChapter(null)
+      setZip('')
     }
   }
 
+  function reset() {
+    setFinderStatus('idle')
+    setNearestChapter(null)
+    setZip('')
+  }
+
+  function resolveChapter(lat, lon) {
+    const chapter = findNearest(lat, lon)
+    setNearestChapter(chapter)
+    setFinderStatus('found')
+  }
+
   function handleUseLocation() {
-    if (!navigator.geolocation) {
-      setFinderStatus('error')
-      return
-    }
+    if (!navigator.geolocation) { setFinderStatus('error'); return }
     setFinderStatus('loading')
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const chapter = findNearest(pos.coords.latitude, pos.coords.longitude)
-        setNearestChapter(chapter)
-        setFinderStatus('found')
-      },
+      (pos) => resolveChapter(pos.coords.latitude, pos.coords.longitude),
       () => setFinderStatus('error'),
       { timeout: 10000, enableHighAccuracy: true },
     )
+  }
+
+  async function handleZipSubmit(e) {
+    e.preventDefault()
+    if (!zip.trim()) return
+    setFinderStatus('loading')
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip.trim())}&countrycodes=us&format=json&limit=1`,
+        { headers: { 'Accept-Language': 'en' } },
+      )
+      const data = await res.json()
+      if (!data.length) { setFinderStatus('error'); return }
+      resolveChapter(parseFloat(data[0].lat), parseFloat(data[0].lon))
+    } catch {
+      setFinderStatus('error')
+    }
   }
 
   function handleSubmit(e) {
@@ -142,17 +166,31 @@ export default function GetInvolved() {
                   <div className="flex-1">
                     <h3 className="text-lg font-bold">Find your nearest chapter</h3>
                     <p className="mt-1 text-sm text-slate-400">
-                      Share your location and we'll match you to the closest ScriptCore chapter.
+                      Use your device location or enter your zip code to find the closest ScriptCore chapter.
                     </p>
 
                     {finderStatus === 'idle' && (
-                      <button onClick={handleUseLocation} className="btn-primary mt-5">
-                        <Icon name="compass" className="h-4 w-4" /> Use my location
-                      </button>
+                      <div className="mt-5 flex flex-wrap items-center gap-4">
+                        <button onClick={handleUseLocation} className="btn-primary">
+                          <Icon name="compass" className="h-4 w-4" /> Use my location
+                        </button>
+                        <span className="text-xs text-slate-500">or</span>
+                        <form onSubmit={handleZipSubmit} className="flex gap-2">
+                          <input
+                            type="text"
+                            value={zip}
+                            onChange={(e) => setZip(e.target.value)}
+                            placeholder="Enter zip code"
+                            maxLength={10}
+                            className="w-36 rounded-xl border border-white/10 bg-navy-950/60 px-4 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60"
+                          />
+                          <button type="submit" className="btn-ghost py-2.5">Go</button>
+                        </form>
+                      </div>
                     )}
 
                     {finderStatus === 'loading' && (
-                      <p className="mt-5 text-sm text-slate-400">Locating you…</p>
+                      <p className="mt-5 text-sm text-slate-400">Looking up your location…</p>
                     )}
 
                     {finderStatus === 'found' && nearestChapter && (
@@ -168,7 +206,7 @@ export default function GetInvolved() {
                           <p className="mt-1 text-sm text-slate-400">{nearestChapter.miles} miles away</p>
                         </div>
                         <button
-                          onClick={() => { setFinderStatus('idle'); setNearestChapter(null) }}
+                          onClick={reset}
                           className="text-xs text-slate-500 underline underline-offset-2 hover:text-slate-300"
                         >
                           Search again
@@ -179,11 +217,9 @@ export default function GetInvolved() {
                     {finderStatus === 'error' && (
                       <div className="mt-5">
                         <p className="text-sm text-red-400">
-                          Couldn't access your location — please check your browser permissions and try again.
+                          Couldn't find that location — try entering your zip code instead.
                         </p>
-                        <button onClick={handleUseLocation} className="btn-ghost mt-3">
-                          Try again
-                        </button>
+                        <button onClick={reset} className="btn-ghost mt-3">Try again</button>
                       </div>
                     )}
                   </div>
