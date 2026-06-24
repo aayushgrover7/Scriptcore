@@ -30,14 +30,6 @@ export default function Team() {
                   </div>
                   <h3 className="mt-5 text-lg font-bold">{member.name}</h3>
                   <p className="text-sm font-medium text-brand-cyan">{member.role}</p>
-                  <p className="mt-1 text-sm text-slate-400">{member.focus}</p>
-                  <a
-                    href="#"
-                    aria-label={`${member.name} on LinkedIn`}
-                    className="mt-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-colors hover:border-brand-cyan/50 hover:text-brand-cyan"
-                  >
-                    <Icon name="linkedin" className="h-5 w-5" />
-                  </a>
                 </article>
               </Reveal>
             ))}

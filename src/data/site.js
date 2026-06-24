@@ -129,12 +129,12 @@ export const RESOURCES = [
 
 
 export const TEAM = [
-  { name: 'Rishi Murali', role: 'President', focus: 'Python · Curriculum', initials: 'AC' },
-  { name: 'Karthik Prem', role: 'Vice President', focus: 'Web Development', initials: 'KP' },
-  { name: 'Sohan Patro', role: 'Operations Lead', focus: 'LEGO Robotics', initials: 'SP' },
-  { name: 'Taylor Kim', role: 'Events Lead', focus: 'Hackathons & Workshops', initials: 'TK' },
-  { name: 'Morgan Lee', role: 'Outreach Coordinator', focus: 'Towns & Partnerships', initials: 'ML' },
-  { name: 'Casey Nguyen', role: 'Mentorship Lead', focus: 'Leadership Program', initials: 'CN' },
+  { name: 'Rishi Murali', role: 'President', initials: 'RM' },
+  { name: 'Karthik Prem', role: 'Vice President', initials: 'KP' },
+  { name: 'Sohan Patro', role: 'Operations Lead', initials: 'SP' },
+  { name: 'Taylor Kim', role: 'Events Lead', initials: 'TK' },
+  { name: 'Morgan Lee', role: 'Outreach Coordinator', initials: 'ML' },
+  { name: 'Casey Nguyen', role: 'Mentorship Lead', initials: 'CN' },
 ]
 
 export const CHAPTERS = [
