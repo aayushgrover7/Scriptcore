@@ -84,13 +84,6 @@ export const PROGRAMS = [
     outcome: 'Design, build, and program robots to complete real-world missions.',
   },
   {
-    title: 'Competitive Programming',
-    level: 'Intermediate',
-    icon: 'trophy',
-    topics: ['Algorithms', 'Data Structures', 'Logic Puzzles', 'Coding Challenges', 'Competition Strategies'],
-    outcome: 'Strengthen problem-solving skills and prepare for coding competitions.',
-  },
-  {
     title: 'Public Speaking & Presentation',
     level: 'All Levels',
     icon: 'mic',
@@ -113,7 +106,7 @@ export const LEARNING_PATH = [
   },
   {
     tier: 'Intermediate',
-    items: ['Web Development', 'Artificial Intelligence', 'Competitive Programming'],
+    items: ['Web Development', 'Artificial Intelligence'],
   },
   {
     tier: 'Advanced',
