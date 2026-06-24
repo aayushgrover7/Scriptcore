@@ -242,7 +242,9 @@ export default function GetInvolved() {
                       Email us and we'll get back to you with available opportunities.
                     </p>
                     <a
-                      href="mailto:scriptcore1@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=scriptcore1@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:underline"
                     >
                       scriptcore1@gmail.com <Icon name="arrow" className="h-4 w-4" />
@@ -267,7 +269,9 @@ export default function GetInvolved() {
                       Email us and we'll get back to you with available opportunities.
                     </p>
                     <a
-                      href="mailto:scriptcore1@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=scriptcore1@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:underline"
                     >
                       scriptcore1@gmail.com <Icon name="arrow" className="h-4 w-4" />
