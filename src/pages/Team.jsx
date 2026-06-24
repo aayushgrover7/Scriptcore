@@ -18,7 +18,7 @@ export default function Team() {
       <section className="py-24">
         <div className="container-px">
           <SectionHeading eyebrow="Leadership" title="The people making it happen" />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*:last-child]:lg:col-start-2">
             {TEAM.map((member, i) => (
               <Reveal key={member.name} delay={(i % 3) * 0.08}>
                 <article className="card group h-full text-center hover:-translate-y-1.5 hover:border-brand-cyan/40 hover:shadow-glow">
