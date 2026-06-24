@@ -132,6 +132,7 @@ export const TEAM = [
   { name: 'Rishi Murali', role: 'President', initials: 'RM' },
   { name: 'Karthik Prem', role: 'Vice President', initials: 'KP' },
   { name: 'Sohan Patro', role: 'Operations Lead', initials: 'SP' },
+  { name: 'Smirrithi Manikandan', role: 'Operations Lead', initials: 'SM' },
   { name: 'Taylor Kim', role: 'Events Lead', initials: 'TK' },
   { name: 'Morgan Lee', role: 'Outreach Coordinator', initials: 'ML' },
   { name: 'Casey Nguyen', role: 'Mentorship Lead', initials: 'CN' },
