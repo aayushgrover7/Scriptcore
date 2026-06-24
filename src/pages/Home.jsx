@@ -51,7 +51,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-400">
-              <span className="flex items-center gap-2"><Icon name="check" className="h-4 w-4 text-brand-cyan" /> Low cost or no cost</span>
+              <span className="flex items-center gap-2"><Icon name="check" className="h-4 w-4 text-brand-cyan" /> No Cost</span>
               <span className="flex items-center gap-2"><Icon name="check" className="h-4 w-4 text-brand-cyan" /> Beginner friendly</span>
               <span className="flex items-center gap-2"><Icon name="check" className="h-4 w-4 text-brand-cyan" /> Project based</span>
             </div>

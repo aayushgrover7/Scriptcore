@@ -80,7 +80,7 @@ export default function Programs() {
               ))}
             </div>
             <div className="mt-4 rounded-xl border border-brand-cyan/30 bg-brand-cyan/10 px-5 py-4 text-center">
-              <p className="font-display font-semibold text-brand-cyan">Low cost or no cost :)</p>
+              <p className="font-display font-semibold text-brand-cyan">No Cost :)</p>
             </div>
           </Reveal>
         </div>
