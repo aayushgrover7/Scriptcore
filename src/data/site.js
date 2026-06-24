@@ -171,4 +171,4 @@ export const SOCIALS = [
   { label: 'YouTube', href: '#', icon: 'youtube' },
 ]
 
-export const CONTACT_EMAIL = 'hello@scriptcore.org'
+export const CONTACT_EMAIL = 'scriptcore1@gmail.com'
