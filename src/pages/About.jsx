@@ -76,52 +76,58 @@ export default function About() {
       <section className="py-24">
         <div className="container-px">
           <SectionHeading eyebrow="Sessions in Action" title="See what our workshops look like" />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Reveal>
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={`${import.meta.env.BASE_URL}workshop-session-2.png`}
-                  alt="ScriptCore student presenting at a projector during a workshop"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={`${import.meta.env.BASE_URL}workshop-session-3.png`}
-                  alt="ScriptCore students holding certificates after completing a workshop"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={`${import.meta.env.BASE_URL}workshop-session-4.png`}
-                  alt="ScriptCore mentor helping a student with coding on a laptop"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={`${import.meta.env.BASE_URL}workshop-session-5.png`}
-                  alt="ScriptCore workshop session"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.4}>
-              <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img
-                  src={`${import.meta.env.BASE_URL}workshop-session-6.png`}
-                  alt="ScriptCore workshop session"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
+          <div className="mt-12 space-y-6">
+            {/* Row 1 — two wide photos */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              <Reveal>
+                <div className="aspect-video overflow-hidden rounded-2xl border border-white/10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}workshop-session-2.png`}
+                    alt="ScriptCore student presenting at a projector during a workshop"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <div className="aspect-video overflow-hidden rounded-2xl border border-white/10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}workshop-session-3.png`}
+                    alt="ScriptCore students holding certificates after completing a workshop"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
+            {/* Row 2 — three photos */}
+            <div className="grid gap-6 sm:grid-cols-3">
+              <Reveal delay={0.15}>
+                <div className="aspect-video overflow-hidden rounded-2xl border border-white/10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}workshop-session-4.png`}
+                    alt="ScriptCore mentor helping a student with coding on a laptop"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={0.25}>
+                <div className="aspect-video overflow-hidden rounded-2xl border border-white/10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}workshop-session-5.png`}
+                    alt="ScriptCore workshop session"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={0.35}>
+                <div className="aspect-video overflow-hidden rounded-2xl border border-white/10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}workshop-session-6.png`}
+                    alt="ScriptCore workshop session"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
