@@ -76,7 +76,7 @@ export default function About() {
       <section className="py-24">
         <div className="container-px">
           <SectionHeading eyebrow="Sessions in Action" title="See what our workshops look like" />
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <Reveal>
               <div className="overflow-hidden rounded-2xl border border-white/10">
                 <img
@@ -100,6 +100,15 @@ export default function About() {
                 <img
                   src={`${import.meta.env.BASE_URL}workshop-session-4.png`}
                   alt="ScriptCore mentor helping a student with coding on a laptop"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src={`${import.meta.env.BASE_URL}workshop-session-5.png`}
+                  alt="ScriptCore workshop session"
                   className="h-full w-full object-cover"
                 />
               </div>
