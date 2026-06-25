@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import Reveal from '../components/Reveal.jsx'
@@ -6,8 +5,6 @@ import Icon from '../components/Icon.jsx'
 import { SOCIALS, CONTACT_EMAIL } from '../data/site.js'
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
-
   return (
     <>
       <PageHero
@@ -17,8 +14,7 @@ export default function Contact() {
       />
 
       <section className="py-24">
-        <div className="container-px grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          {/* Contact info */}
+        <div className="container-px max-w-lg">
           <Reveal>
             <div className="space-y-8">
               <div>
@@ -63,51 +59,6 @@ export default function Contact() {
                   Head to <Link to="/get-involved" className="text-brand-cyan underline-offset-2 hover:underline">Get Involved</Link> to sign up directly.
                 </p>
               </div>
-            </div>
-          </Reveal>
-
-          {/* Form */}
-          <Reveal delay={0.1}>
-            <div className="card">
-              {sent ? (
-                <div className="flex flex-col items-center py-12 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-cyan/15 text-brand-cyan">
-                    <Icon name="check" />
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold">Message sent!</h3>
-                  <p className="mt-2 text-slate-400">Thanks for reaching out. We'll reply to your email shortly.</p>
-                  <button onClick={() => setSent(false)} className="btn-ghost mt-6">
-                    Send another
-                  </button>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    setSent(true)
-                  }}
-                  className="space-y-5"
-                >
-                  <div>
-                    <label htmlFor="c-name" className="mb-1.5 block text-sm font-medium text-slate-300">Name</label>
-                    <input id="c-name" required placeholder="Your name"
-                      className="w-full rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60" />
-                  </div>
-                  <div>
-                    <label htmlFor="c-email" className="mb-1.5 block text-sm font-medium text-slate-300">Email</label>
-                    <input id="c-email" type="email" required placeholder="you@email.com"
-                      className="w-full rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60" />
-                  </div>
-                  <div>
-                    <label htmlFor="c-msg" className="mb-1.5 block text-sm font-medium text-slate-300">Message</label>
-                    <textarea id="c-msg" rows={5} required placeholder="How can we help?"
-                      className="w-full resize-none rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60" />
-                  </div>
-                  <button type="submit" className="btn-primary w-full">
-                    Send message <Icon name="arrow" className="h-4 w-4" />
-                  </button>
-                </form>
-              )}
             </div>
           </Reveal>
         </div>
