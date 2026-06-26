@@ -294,7 +294,7 @@ export default function GetInvolved() {
               subtitle="Fill out the form and our team will reach out with next steps. Prefer Google Forms? Use the button below."
               align="start"
             />
-            <a href="#" className="btn-ghost mt-8">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf96d0qBNBx8gncSroXB9p-_H12ZyJf8cNFBwwOhx7GoqPUhg/viewform?usp=sharing&ouid=106850629270866701224" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">
               <Icon name="arrow" className="h-4 w-4" /> Open the Google Form
             </a>
             <div className="mt-8 space-y-3 text-sm text-slate-400">
