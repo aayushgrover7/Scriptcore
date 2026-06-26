@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero.jsx'
-import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Icon from '../components/Icon.jsx'
 import { CHAPTERS } from '../data/site.js'
@@ -64,7 +63,6 @@ const PATHS = [
 
 export default function GetInvolved() {
   const [role, setRole] = useState('students')
-  const [submitted, setSubmitted] = useState(false)
   const [finderStatus, setFinderStatus] = useState('idle')
   const [nearestChapter, setNearestChapter] = useState(null)
   const [zip, setZip] = useState('')
@@ -115,11 +113,6 @@ export default function GetInvolved() {
     } catch {
       setFinderStatus('error')
     }
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    setSubmitted(true)
   }
 
   return (
@@ -284,101 +277,7 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* SIGN-UP FORM */}
-      <section className="border-t border-white/10 bg-navy-950/40 py-24">
-        <div className="container-px grid items-start gap-12 lg:grid-cols-[1fr_1.1fr]">
-          <div>
-            <SectionHeading
-              eyebrow="Sign Up"
-              title="Tell us a little about you"
-              subtitle="Fill out the form and our team will reach out with next steps. Prefer Google Forms? Use the button below."
-              align="start"
-            />
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf96d0qBNBx8gncSroXB9p-_H12ZyJf8cNFBwwOhx7GoqPUhg/viewform?usp=sharing&ouid=106850629270866701224" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">
-              <Icon name="arrow" className="h-4 w-4" /> Open the Google Form
-            </a>
-            <div className="mt-8 space-y-3 text-sm text-slate-400">
-              {['Free or low-cost programs', 'Beginner friendly — no experience needed', 'Flexible online & in-person options'].map((t) => (
-                <p key={t} className="flex items-center gap-3">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-cyan/15 text-brand-cyan">
-                    <Icon name="check" className="h-4 w-4" />
-                  </span>
-                  {t}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          <Reveal delay={0.1}>
-            <div className="card">
-              {submitted ? (
-                <div className="flex flex-col items-center py-10 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-cyan/15 text-brand-cyan">
-                    <Icon name="check" />
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold">Thanks for signing up!</h3>
-                  <p className="mt-2 text-slate-400">We'll be in touch soon with next steps for {labelFor(role)}.</p>
-                  <button onClick={() => setSubmitted(false)} className="btn-ghost mt-6">
-                    Submit another response
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <Field label="Full name" name="name" placeholder="Jane Doe" required />
-                  <Field label="Email" name="email" type="email" placeholder="jane@email.com" required />
-                  <div>
-                    <label className="mb-1.5 block text-sm font-medium text-slate-300">I'm interested as a…</label>
-                    <select
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                      className="w-full rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-brand-cyan/60"
-                    >
-                      <option value="students">Student</option>
-                      <option value="volunteers">Volunteer / Mentor</option>
-                      <option value="schools">Town / Partner</option>
-                    </select>
-                  </div>
-                  <Field label="Town (optional)" name="school" placeholder="Your town" />
-                  <div>
-                    <label className="mb-1.5 block text-sm font-medium text-slate-300">Anything you'd like us to know?</label>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      placeholder="Tell us about your interests or experience…"
-                      className="w-full resize-none rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60"
-                    />
-                  </div>
-                  <button type="submit" className="btn-primary w-full">
-                    Submit <Icon name="arrow" className="h-4 w-4" />
-                  </button>
-                </form>
-              )}
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </>
   )
 }
 
-function Field({ label, name, type = 'text', placeholder, required }) {
-  return (
-    <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-slate-300">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="w-full rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-cyan/60"
-      />
-    </div>
-  )
-}
-
-function labelFor(role) {
-  return role === 'students' ? 'students' : role === 'volunteers' ? 'volunteers' : 'town partners'
-}
